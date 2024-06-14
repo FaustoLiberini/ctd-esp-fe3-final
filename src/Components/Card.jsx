@@ -5,8 +5,12 @@ import { ContextGlobal } from '../utils/global.context';
 const Card = ({ name, username, id }) => {
   const { dispatch } = useContext(ContextGlobal);
 
-  const addFav = () => {
+  const addFav = (e) => {
+    e.preventDefault(); 
+
     const dentista = { name, username, id };
+
+  
 
     let favs = JSON.parse(localStorage.getItem("favs")) || [];
 
@@ -19,7 +23,7 @@ const Card = ({ name, username, id }) => {
     favs.push(dentista);
     localStorage.setItem("favs", JSON.stringify(favs));
 
-    dispatch({ type: 'ADD_TO_FAVS', payload: dentista });
+    dispatch({ type: 'ADD_FAVS', payload: dentista });
   };
 
   return (

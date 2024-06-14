@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import Card from "../Components/Card";
-import { ContextGlobal } from "../utils/global.context";;
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { ContextGlobal } from "../utils/global.context";
 
 const Favs = () => {
-  const {state} = useContext(ContextGlobal);
+  const { state, dispatch } = useContext(ContextGlobal); // Aquí desestructuramos dispatch del contexto
   const [favs, setFavs] = useState([]);
 
   useEffect(() => {
@@ -13,15 +11,24 @@ const Favs = () => {
     setFavs(storedFavs);
   }, []);
 
+  const eliminarFav = (id) => {
+    dispatch({ type: "BORRAR_FAVS", payload: { id } });
+
+    const updFavs = favs.filter((fav) => fav.id !== id);
+    setFavs(updFavs);
+    localStorage.setItem("favs", JSON.stringify(updFavs));
+  };
+
   return (
-    <div> {/*className={state.theme}*/}
+    <div className={state.theme}>
       <h1>Dentistas Favs</h1>
       <div className="card-grid">
-        {favs.map(dentista => (
-          <Card key={dentista.id} id={dentista.id} name={dentista.name} username={dentista.username}/>
+        {favs.map((dentista) => (
+          <div key={dentista.id}>
+            <Card id={dentista.id} name={dentista.name} username={dentista.username} />
+            <button onClick={() => eliminarFav(dentista.id)}>Eliminar</button>
+          </div>
         ))}
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
       </div>
     </div>
   );
