@@ -9,9 +9,11 @@ const Contact = () => {
 
   return (
     <div className={themeClass}>
+      <div className='contact'>
       <h2>Want to know more?</h2>
       <p>Send us your questions and we will contact you</p>
       <Form/>
+      </div>
     </div>
   );
 }

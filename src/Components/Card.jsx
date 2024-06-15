@@ -32,7 +32,6 @@ const Card = ({ name, username, id }) => {
       <img src="/public/images/doctor.jpg" alt="Imagen Dentista" />
       <h3>{name}</h3>
       <p>{username}</p>
-      <p>ID: {id}</p>
       <Link to={`/detail/${id}`}>Ver más info</Link>
       <button onClick={addFav} className="favButton">Add fav</button>
     </div>

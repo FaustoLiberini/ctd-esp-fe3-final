@@ -26,7 +26,7 @@ const Favs = () => {
         {favs.map((dentista) => (
           <div key={dentista.id}>
             <Card id={dentista.id} name={dentista.name} username={dentista.username} />
-            <button onClick={() => eliminarFav(dentista.id)}>Eliminar</button>
+            <button className="btn-eliminar" onClick={() => eliminarFav(dentista.id)}>Eliminar</button>
           </div>
         ))}
       </div>
