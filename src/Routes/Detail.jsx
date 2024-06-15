@@ -1,19 +1,44 @@
-import React from 'react'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { ContextGlobal } from '../utils/global.context';
+import '../index.css'; // Importamos el archivo de estilos global
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  const { state } = useContext(ContextGlobal);
+  const { id } = useParams();
+  const [dentista, setDentista] = useState(null);
+
+  const themeClass = state.theme === 'dark' ? 'dark' : '';
+
+  useEffect(() => {
+    const fetchDentista = async () => {
+      try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+        const data = await response.json();
+        setDentista(data);
+      } catch (error) {
+        console.error('Error fetching dentista:', error);
+      }
+    };
+    fetchDentista();
+  }, [id]);
 
   return (
-    <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
-  )
+    <div className={`main-content ${themeClass}`}>
+      {dentista ? (
+        <div className="dentista-info">
+          <h1>Información de: {dentista.name}</h1>
+          <div className='info-dentista'>
+            <h4>Email:</h4> <span>{dentista.email}</span>
+            <h4>Phone:</h4> <span>{dentista.phone}</span>
+            <h4>Website:</h4> <span>{dentista.website}</span>
+          </div>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 }
 
-export default Detail
+export default Detail;

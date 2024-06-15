@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import { ContextGlobal } from '../utils/global.context';
 
 const Card = ({ name, username, id }) => {
-  const { dispatch } = useContext(ContextGlobal);
+  const { state, dispatch } = useContext(ContextGlobal);
+
+  // Determinar la clase CSS a aplicar según el tema actual
+  const themeClass = state.theme === 'dark' ? 'dark' : '';
 
   const addFav = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const dentista = { name, username, id };
-
-  
 
     let favs = JSON.parse(localStorage.getItem("favs")) || [];
 
@@ -27,7 +28,7 @@ const Card = ({ name, username, id }) => {
   };
 
   return (
-    <div className="card">
+    <div className={`card ${themeClass}`}>
       <img src="/public/images/doctor.jpg" alt="Imagen Dentista" />
       <h3>{name}</h3>
       <p>{username}</p>

@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 code {
@@ -25,9 +29,36 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 3rem;
+  background-color: #60a3d0;
+}
+
+.links-left {
+  display: flex;
+  gap: 1rem;
+  align-items: center; 
+}
+
+.links-left > h4 {
+  margin: 0;
+}
+
+.theme-switcher {
+  margin-right:100px;
+}
+
+.theme-switcher button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.theme-switcher button:focus {
+  outline: none;
 }
 
 a{
@@ -42,23 +73,88 @@ a:hover{
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  padding: 2rem;
-  position: relative;
+  padding: 1rem 2rem; /* Ajustado el padding horizontal */
+  position: fixed;
   bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 40px; /* Aumentado el alto para evitar superposiciones */
+  background-color: #60a3d0; /* Color de fondo del footer */
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
+/* Estilos para el contenido izquierdo del footer */
+.footer-izq {
+  display: flex;
+  align-items: center;
 }
-footer > p{
+
+.footer-izq > p {
+  margin: 0;
+  padding-right: 1rem;
+}
+
+.footer-izq > img {
+  width: 200px;
+}
+
+footer > p {
   margin: 0;
   padding-top: 0.7rem;
+}
+
+.redes {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: 5rem; 
+}
+
+.redes img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0);
+}
+main {
+  flex: 1; 
+  padding-bottom: 80px; 
+  overflow-y: auto;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem;
+  
+}
+
+.main-content.dark {
+  background-color: #12121296;
+  color: white;
+}
+
+.dentista-info {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.info-dentista{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.info-dentista h4 {
+  margin: 0;
 }
 
 form{
@@ -69,8 +165,8 @@ form{
   height: 100px;
   margin: 0 auto;
 }
-
 .card{
+  width: calc(33.33% - 2rem);
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -79,18 +175,15 @@ form{
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
 }
-
 .card:hover{
   border: 0.5px solid rgb(206, 217, 142);
 }
-
 .card img {
   width: 100%;
   height: auto;
   max-height: 150px;
   object-fit: cover;
 }
-
 .card-grid{
   display: flex;
   justify-content: space-evenly;
@@ -100,30 +193,42 @@ form{
   flex-wrap: wrap;
   margin: 0 auto;
 }
-
 table {
- border-collapse: collapse;
+border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     display: table;
     border: 1px solid #ccc;
-
 }
-
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
-
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-
 .dark{
   background-color: #12121296;
   color: white;
 }
 .dark > a {
   color: white;
+}
+.dark  h4 {
+  color: white;
+}
+
+.dark .redes img {
+  filter: brightness(1);
+}
+
+.dark footer {
+  background-color: #5802f8; 
+  color: white; 
+}
+
+.dark nav{
+  background-color: #5802f8; 
+  color: white; 
 }

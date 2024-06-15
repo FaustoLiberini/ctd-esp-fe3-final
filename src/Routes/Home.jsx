@@ -6,9 +6,10 @@ import Card from '../Components/Card';
 
 const Home = () => {
   const { state } = useContext(ContextGlobal);
+  const themeClass = state.theme === 'dark' ? 'dark' : '';
 
   return (
-    <main className="">
+    <main  className={themeClass}>
       <h1>Home</h1>
       <div className='card-grid'>
       {state.data.map(dentista => (
