@@ -188,7 +188,7 @@ form{
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-  width: 90vw;
+  width: 70vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -216,7 +216,7 @@ tr:nth-child(even) {
   color: white;
 }
 .dark  h4 {
-  color: white;
+  color: white; 
 }
 
 .dark .redes img {
