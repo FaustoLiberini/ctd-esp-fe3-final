@@ -76,16 +76,15 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 1rem 2rem; /* Ajustado el padding horizontal */
+  padding: 1rem 2rem; 
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40px; /* Aumentado el alto para evitar superposiciones */
-  background-color: #60a3d0; /* Color de fondo del footer */
+  height: 40px; 
+  background-color: #60a3d0; 
 }
 
-/* Estilos para el contenido izquierdo del footer */
 .footer-izq {
   display: flex;
   align-items: center;

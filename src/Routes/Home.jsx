@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import { ContextGlobal } from '../utils/global.context';
 import Card from '../Components/Card';
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Home = () => {
   const { state } = useContext(ContextGlobal);
   const themeClass = state.theme === 'dark' ? 'dark' : '';
@@ -20,7 +18,6 @@ const Home = () => {
           username={dentista.username} 
         />
       ))}
-        {/* Aqui deberias renderizar las cards */}
       </div>
     </main>
   )

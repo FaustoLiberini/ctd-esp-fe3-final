@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ContextGlobal } from '../utils/global.context';
-import '../index.css'; // Importamos el archivo de estilos global
-
 const Detail = () => {
   const { state } = useContext(ContextGlobal);
   const { id } = useParams();

@@ -54,7 +54,7 @@ const Form = () => {
       {error && <h3>{error}</h3>}
       {mostrarInfo && (
         <div>
-          <h3>Te contactaremos cuando antes vía mail {cliente.nombre}</h3>
+          <h3>Te contactaremos cuanto antes vía mail {cliente.nombre}</h3>
         </div>
       )}
     </div>

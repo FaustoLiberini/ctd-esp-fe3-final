@@ -9,7 +9,7 @@ export const reducer = (state, action) => {
         (item) => item.id !== action.payload.id
       );
       return {...state, favs: filtradoFavs};
-    case "TOGGLE_THEME":
+    case "CAMBIO_THEME":
       return {...state, theme: state.theme === "light" ? "dark" : "light"};
     default:
       throw new Error();

@@ -5,7 +5,7 @@ import { ContextGlobal } from '../utils/global.context';
 const Card = ({ name, username, id }) => {
   const { state, dispatch } = useContext(ContextGlobal);
 
-  // Determinar la clase CSS a aplicar según el tema actual
+
   const themeClass = state.theme === 'dark' ? 'dark' : '';
 
   const addFav = (e) => {
