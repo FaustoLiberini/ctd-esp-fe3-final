@@ -15,7 +15,7 @@ const Detail = () => {
         const data = await response.json();
         setDentista(data);
       } catch (error) {
-        console.error('Error fetching dentista:', error);
+        console.error('Error al traer el dentista:', error);
       }
     };
     fetchDentista();

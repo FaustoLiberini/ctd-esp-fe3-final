@@ -7,8 +7,8 @@ const Favs = () => {
   const [favs, setFavs] = useState([]);
 
   useEffect(() => {
-    const storedFavs = JSON.parse(localStorage.getItem("favs")) || [];
-    setFavs(storedFavs);
+    const guardadosFavs = JSON.parse(localStorage.getItem("favs")) || [];
+    setFavs(guardadosFavs);
   }, []);
 
   const eliminarFav = (id) => {
@@ -20,7 +20,7 @@ const Favs = () => {
   };
 
   return (
-    <div className={state.theme}>
+    <div className={`${state.theme} favs-container`}>
       <h1>Dentistas Favs</h1>
       <div className="card-grid">
         {favs.map((dentista) => (

@@ -26,7 +26,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="theme-switcher">
-        <button onClick={() => dispatch({ type: 'CAMBIO_THEME' })}>
+        <button onClick={() => dispatch({type: 'CAMBIO_THEME'})}>
           {state.theme === 'light' ? (
             <span role="img" aria-label="luna">
               🌙
