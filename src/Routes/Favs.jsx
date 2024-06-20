@@ -3,7 +3,7 @@ import Card from "../Components/Card";
 import { ContextGlobal } from "../utils/global.context";
 
 const Favs = () => {
-  const { state, dispatch } = useContext(ContextGlobal); 
+  const {state, dispatch} = useContext(ContextGlobal); 
   const [favs, setFavs] = useState([]);
 
   useEffect(() => {

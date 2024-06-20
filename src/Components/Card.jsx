@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContextGlobal } from '../utils/global.context';
 
-const Card = ({ name, username, id }) => {
-  const { state, dispatch } = useContext(ContextGlobal);
+const Card = ({name, username, id}) => {
+  const {state, dispatch} = useContext(ContextGlobal);
 
 
   const themeClass = state.theme === 'dark' ? 'dark' : '';

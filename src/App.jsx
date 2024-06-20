@@ -10,7 +10,7 @@ import Favs from "./Routes/Favs";
 import { ContextGlobal } from './utils/global.context';
 
 function App() {
-  const { state } = useContext(ContextGlobal);
+  const {state} = useContext(ContextGlobal);
 
   useEffect(() => {
     document.body.className = state.theme;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ContextGlobal } from '../utils/global.context';
 
 const Footer = () => {
-  const { state } = useContext(ContextGlobal);
+  const {state} = useContext(ContextGlobal);
   const themeClass = state.theme === 'dark' ? 'dark' : '';
   return (
     <footer className={themeClass}>

@@ -3,7 +3,7 @@ import Form from '../Components/Form';
 import { ContextGlobal } from '../utils/global.context';
 
 const Contact = () => {
-  const { state } = useContext(ContextGlobal);
+  const {state} = useContext(ContextGlobal);
 
   const themeClass = state.theme === 'dark' ? 'dark' : '';
 

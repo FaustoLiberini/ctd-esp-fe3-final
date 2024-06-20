@@ -3,7 +3,7 @@ import { ContextGlobal } from '../utils/global.context';
 import Card from '../Components/Card';
 
 const Home = () => {
-  const { state } = useContext(ContextGlobal);
+  const {state} = useContext(ContextGlobal);
   const themeClass = state.theme === 'dark' ? 'dark' : '';
 
   return (

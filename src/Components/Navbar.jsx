@@ -5,7 +5,7 @@ import { ContextGlobal } from '../utils/global.context';
 
 
 const Navbar = () => {
-  const { state, dispatch } = useContext(ContextGlobal);
+  const {state, dispatch} = useContext(ContextGlobal);
 
   const themeClass = state.theme === 'dark' ? 'dark' : '';
 

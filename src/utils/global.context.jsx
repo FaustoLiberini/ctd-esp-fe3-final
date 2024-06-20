@@ -6,7 +6,7 @@ const initialState = {theme: "light", data: [], favs: []};
 
 const ContextGlobal = createContext();
 
-export const ContextProvider = ({ children }) => {
+export const ContextProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
